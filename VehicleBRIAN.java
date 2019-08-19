@@ -3,6 +3,30 @@ class Vehicle {
 	int passengers;
 	int fuelcap;
 	int mpg;
+	int doors;
+	int tireSize;
+	int tonage;
+	int modelYear;
+	int dist;
+	String color;
+	
+	Vehicle(int p, int f, int m) {
+		passengers = p;
+		fuelcap = f;
+		mpg = m;
+	}	
+	Vehicle () {
+	
+	int doors = 4;
+	int tiresize = 34;
+	int tonage = 3500;
+	int modelYear = 1964;
+	String Color = "Electric Blue";
+			
+		
+	}	
+	
+	
 	
 	
 
@@ -17,7 +41,7 @@ class Vehicle {
 	}
 }
 
-class VehicleRefill {
+class VehicleBRIAN {
 	
 	public static void main ( String[] args) {
 		Vehicle truck = new Vehicle();
