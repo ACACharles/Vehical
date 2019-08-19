@@ -8,7 +8,6 @@ class Vehicle {
 	int totalmiles;
 	int tonage;
 	int distance;
-	
 	String color;
 	
 	//This is a constructor for the Vehicle.
@@ -17,6 +16,12 @@ class Vehicle {
 		fuelcap = f;
 		mpg = m;
 	}
+	
+	Vehicle() {
+		passengers = 4;
+		fuelcap = 18; 
+		mpg = 24;
+	} 
 	
 	//Return the range.
 	int range() {
@@ -35,10 +40,11 @@ class Vehicle {
 	}
 }
 
-class vehdemo {
+class vehicleZACKERY {
 	public static void main (String args[]) {
 		Vehicle minivan = new Vehicle(7,16,21);
 		Vehicle sportscar = new Vehicle(2,14,12);
+		Vehicle Truck = new Vehicle();
 		double gallons;
 		double refuels;
 		int dist = 252;
@@ -73,6 +79,15 @@ class vehdemo {
 		System.out.println("To go " + dist + " miles the sportscar needs " + gallons + " gallons of fuel.");
 		
 		System.out.println("To go " + dist + " mile the sportscar needs " + refuels + " refuels ");
+		
+		//displaying Truck data
+		gallons = Truck.fuelneeded(dist);
+		
+		refuels = Truck.numrefill(dist);
+		
+		System.out.println("To go " + dist + " miles the Truck needs " + gallons + " gallons of fuel.");
+		
+		System.out.println("To go " + dist + " mile the Truck needs " + refuels + " refuels ");
 		
 		
 		
