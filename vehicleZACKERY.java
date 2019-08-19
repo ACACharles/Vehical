@@ -17,6 +17,7 @@ class Vehicle {
 		mpg = m;
 	}
 	
+	//Constructor for default Vehicle. 
 	Vehicle() {
 		passengers = 4;
 		fuelcap = 18; 
@@ -72,7 +73,7 @@ class vehicleZACKERY {
 		
 		
 		//displaying sportscar data
-		gallons = sportscar.fuelneeded(dist);
+		gallons = sportscar.fuelneeded(dist);3
 		
 		refuels = sportscar.numrefill(dist);
 		
