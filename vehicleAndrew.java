@@ -1,4 +1,6 @@
-class VehicleAndrew{
+import java.util.Scanner;
+
+class Vehicle{
 	
 		int passengers; // How many passengers
 		int fuelcap;    // fuel capacity
@@ -7,13 +9,31 @@ class VehicleAndrew{
 		String color;   // color of cords
 		int tonnage;    // weight of car
 		int year;       // year car made
-//		int range;	     // how m any miles per tank
+//		int range;	     // how many miles per tank
 			
 	
 	double refill(double gallons) {
 		return (double)  gallons / fuelcap;
-		
 	
+		Vehicle()
+		{		
+		passengers = 2;
+		fuelcap = 12;
+		mpg = 28;
+		doors = 2;
+		tonnage = 2;
+		year = 2019;
+		}	
+
+		Vehicle()
+		{
+			Scanner pass = new Scanner(System.in);
+			Scanner fuelc = new Scanner(System.in;);
+			Scanner milesper = new Scanner(System.in);
+			Scanner drs =  new Scanner(System.in);
+		}
+
+			
 	
 	}
 }
