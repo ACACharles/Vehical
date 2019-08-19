@@ -14,7 +14,7 @@ class VehicleDREW
 	*/
 	
 	//This is the constructor.
-	Vehicle(int p, int f, int m /*, int d, String c, int w, int y, int tM*/)
+	void Vehicle(int p, int f, int m /*, int d, String c, int w, int y, int tM*/)
 	{
 		passengers = p;
 		fuelcap = f;
