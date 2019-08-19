@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Vehicle {
 
 	int passengers; 
@@ -5,31 +6,52 @@ class Vehicle {
 	int mpg;
 	int refuel;
 
-Vehicle (int p, int f, int m) 
+	// This is the default constructor
+Vehicle() 
+	{
+	passengers = 4;
+	fuelcap =  350;
+	mpg = 30;
+	}
 	
+Vehicle (int p, int f, int m) 
+	// This the constructor
 	{
 	passengers = p;
 	fuelcap = f;
 	mpg = m;
 	}
+
+	
 	 int range() 
 	 {
 	 return mpg *fuelcap;
 	 }
-	 double fuelneeded (int miles) 
+	 double fuelneeded (int miles)
 	 {
 	 return (double) miles / mpg;
 	 }
-	  double refuel (int miles) 
+	  double refuel (int miles)
 	 {
 	 return (double) miles / (mpg * fuelcap);
 	 }
 }
 class VehicleCody {
 	public static void main (String[] args) {
+		
+	System.out.println(" Please enter passenger number, fuelcap, and mpg");
+	Scanner specs = new Scanner(System.in);
+	int p = specs.nextInt();
+	int f = specs.nextInt();
+	int m = specs.nextInt();
+	Vehicle minivan = new Vehicle(p, f, m);
 	
-	Vehicle minivan = new Vehicle(7, 16, 21);
-	Vehicle sportscar = new Vehicle(2, 14, 12);
+	
+	System.out.println(" Please enter passenger number, fuelcap, and mpg");
+	p = specs.nextInt();
+	f = specs.nextInt();
+	m = specs.nextInt();
+	Vehicle sportscar = new Vehicle(p, f, m);
 	double gallons;
 	double refillnumber;
 	int dist = 252;
