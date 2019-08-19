@@ -5,27 +5,35 @@ class Vehicle
 	int passengers;
 	int fuelcap;
 	int mpg;
-	/*
 	int doors;
 	String color;
 	int weight;
 	int year;
 	int totalMiles;
-	*/
+	
+	Vehicle()
+	{
+		passengers=2;
+		fuelcap=20;
+		mpg=20;
+		int doors=4;
+		String color="Lime Green";
+		int weight=4000;
+		int year=2019;
+		int totalMiles=0;
+	}
 	
 	//This is the constructor.
-	Vehicle(int p, int f, int m /*, int d, String c, int w, int y, int tM*/)
+	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM)
 	{
 		passengers = p;
 		fuelcap = f;
 		mpg = m;
-		/*
 		doors = d;
 		color = c;
 		weight = w;
 		year = y;
-		totalMiles=tM
-		*/
+		totalMiles=tM;
 	}
 	
 	int range()
@@ -58,8 +66,9 @@ class VehicleDREW
 	public static void main(String[] args)
 	throws java.io.IOException
 	{
-		Vehicle minivan = new Vehicle(7, 16, 21);
-		Vehicle sportscar= new Vehicle(2, 14, 12);
+		Vehicle motorcycle= new Vehicle();
+		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000);
+		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000);
 		double gallons;
 		int refill;
 		int dist=0;
@@ -79,11 +88,11 @@ class VehicleDREW
 		}
 		
 		//to calculate how many gallons of fuel needed
-		gallons = minivan.fuelneeded(dist);
+		gallons = (int) minivan.fuelneeded(dist);
 		
 		System.out.println("\nTo go " + dist + " miles the minivan needs " + gallons + " gallons of fuel.\n");
 		
-		gallons = sportscar.fuelneeded(dist);
+		gallons = (int) sportscar.fuelneeded(dist);
 		
 		System.out.println("To go " + dist + " miles the sportscar needs " + gallons + " gallons of fuel.\n");
 
@@ -103,5 +112,7 @@ class VehicleDREW
 		oil= sportscar.oilchange(dist);
 		
 		System.out.println("To go " + dist + " miles the sportscar will need " + oil + " oil change(s).\n");
+		
+		System.out.println("The motorcycle has a mpg of " + motorcycle.mpg);
 	}
 }
