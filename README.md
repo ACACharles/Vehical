@@ -1,2 +1,0 @@
-# ClassProjects
-ACA Class Project
