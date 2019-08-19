@@ -1,19 +1,19 @@
-class vehicle
+class Vehicle
 {
 		int passengers; // number of passengers
 		int fuelcap; // fuel capacity in gallons
 		int mpg; // fuel consumption in miles per gallon
-		int doors; // number of doors 
-		int tireSize; // Size of tires
-		int weight; // weight of vehicle tons
-		int year; // year model
-		int totalmiles; // total miles on vehicle 
+		//int doors; // number of doors 
+		//int tireSize; // Size of tires
+		//int weight; // weight of vehicle tons
+		//int year; // year model
+		//int totalmiles; // total miles on vehicle 
 		int refuel;
-		String color; // color of vehicle
+		//String color; // color of vehicle
 			
 		
 		// This is a constructor for Vehicle.
-			vehicle(int p, int f, int m) {
+			Vehicle(int p, int f, int m) {
 			passengers = p;
 			fuelcap = f;
 			mpg = m; 
@@ -37,27 +37,27 @@ class vehicle
 		 
 		
 	}
-	class vehicleluke {
+	class vehicleLUKE {
 		public static void main (String [] args) {
 			// construct complete vehicles
-			vehicle minivan = new vehicle(7, 16, 21) ;
-			vehicle sportscar = new vehicle (2, 14, 12) ;
+			Vehicle minivan = new Vehicle(7, 16, 21) ;
+			Vehicle sportscar = new Vehicle (2, 14, 12) ;
 			double gallons;
 			double refillnumber ;
 			int dist = 252; 
 			gallons = minivan.fuelneeded(dist); 
 			
-			System.out.println("to go " + dist +  " miles minivan needs" +  gallons + " gallons of fuel. ");
+			System.out.println(" To go " + dist +  " miles minivan needs " +  gallons + " gallons of fuel. ");
 			
 			gallons = sportscar.fuelneeded(dist);
-			
-			System.out.println("To go " + dist +  "miles sportscar needs" +  gallons + " gallons of fuel. ") ;
+		
+			System.out.println(" To go " + dist +  " miles sportscar needs " +  gallons + " gallons of fuel. ") ;
 			
 			gallons = minivan.fuelneeded(dist); 
 			
-			System.out.println ("To go " + dist  + "You will use up " +  minivan.refuel(dist) + "of tank." );
+			System.out.println (" To go " + dist  + " you will use up " +  minivan.refuel(dist) + " of tank. " );
 			
-			System.out.println ("To go " + dist  + "You will use up" +  sportscar.refuel(dist) + " of tank.") ;
+			System.out.println (" To go " + dist  + " you will use up " +  sportscar.refuel(dist) + " of tank. ") ;
 			 
 		
 				}
