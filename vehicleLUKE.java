@@ -55,9 +55,9 @@ class Vehicle
 			
 			gallons = minivan.fuelneeded(dist); 
 			
-			System.out.println (" To go " + dist  + " you will use up " +  minivan.refuel(dist) + " of tank. " );
+			System.out.println (" To go " + dist  + " the minivan will use up " +  minivan.refuel(dist) + " of tank. " );
 			
-			System.out.println (" To go " + dist  + " you will use up " +  sportscar.refuel(dist) + " of tank. ") ;
+			System.out.println (" To go " + dist  + " the sportscar will use up " +  sportscar.refuel(dist) + " of tank. ") ;
 			 
 		
 				}
