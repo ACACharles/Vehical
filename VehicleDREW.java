@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class VehicleDREW
+class Vehicle
 {
 	int passengers;
 	int fuelcap;
@@ -14,7 +14,7 @@ class VehicleDREW
 	*/
 	
 	//This is the constructor.
-	void Vehicle(int p, int f, int m /*, int d, String c, int w, int y, int tM*/)
+	Vehicle(int p, int f, int m /*, int d, String c, int w, int y, int tM*/)
 	{
 		passengers = p;
 		fuelcap = f;
@@ -53,7 +53,7 @@ class VehicleDREW
 }
 
 
-class myVeh
+class VehicleDREW
 {
 	public static void main(String[] args)
 	throws java.io.IOException
