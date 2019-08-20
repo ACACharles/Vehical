@@ -13,7 +13,7 @@ class Vehicle
 	int totalMiles;
 	int tireSize;
 	
-	public int topSpeed=120;
+	public int topSpeed;
 	public int CurrSpeed;
 	public static String hornSound="Toot Toot";
 	public static String key ="123456";
@@ -139,6 +139,19 @@ class Vehicle
 			return false;
 	}
 	
+	public void setVehicle(String a, String b, int c, int d)
+	{
+		key=a;
+		hornSound=b;
+		topSpeed=c;
+		CurrSpeed=d;
+	}
+	
+	public void getVehicle()
+	{
+		System.out.println(key+" " +hornSound + " "+ topSpeed + " " + CurrSpeed+ " ");
+	}
+	
 }
 
 
@@ -204,8 +217,12 @@ class VehicleDREW
 		
 		//Testing horn
 		System.out.println(Vehicle.honkHorn());
+		
+		Vehicle testVehicle=new Vehicle();
+		testVehicle.setVehicle("123456", "Hoot", 120, 0);
+		testVehicle.getVehicle();
 	}
 }
 
 //Part A completed.
-//Part B completed.
+//Part B plus bonus completed. 
