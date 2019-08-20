@@ -95,7 +95,7 @@ class Vehicle {
 		return horn; }	
 */	
 	public static String accelerate()
-	{ String motion = "Accelerating.....";
+	{ String motion = "I fill the need for speed.....";
 		return motion; }
 		
 	public static String brake()

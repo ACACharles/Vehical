@@ -1,4 +1,4 @@
-class Vehicle{
+		class Vehicle{
 	
 		int passengers; // How many passengers
 		int fuelcap;    // fuel capacity
@@ -13,7 +13,7 @@ class Vehicle{
 		int speed;
 		String hornSound;
 		int fuelLevel;
-		String Key = "carcar";
+		public static String Key = "carcar";
 			
 			Vehicle()
 		{		
@@ -101,18 +101,15 @@ class Vehicle{
 		return beepHorn;
 	}
 	
-	public boolean startCar(String usedKey){
+	public static boolean startCar(String usedKey){
 		
 		if (usedKey == Key)
 		{
-		
-		System.out.println("Then start car.");
 		return true; // car starts
 		}
 		
 		else{
-		System.out.println("No start!");
-			return false;
+		return false;
 		}
 	}
 	
@@ -124,14 +121,15 @@ class Vehicle{
 	
 	
 }
-
+//Vehicle(int p,int fc ,int mpg ,int ton,int yr,int drs,int mlg,String clr,int ts)
 class vehicleAndrew{
 	public static void main (String[] args){
 		Vehicle sportscar = new Vehicle();
-		Vehicle RangeRover = new Vehicle();
+		Vehicle RangeRover = new Vehicle(5,22,12,2,2019,4,0,"black",40);
 		double gallons = 21;
 		int dist = 252;
 		double refill;
+		String Key = "carcar";
 		
 	
 		
@@ -148,7 +146,16 @@ class vehicleAndrew{
 		
 		System.out.println(sportscar.honkHorn());
 		System.out.println("You will need to refill " + refill + " times" );
-			
+		System.out.println(sportscar.accelerate());
 		
-	}	
+		if (Vehicle.startCar(Key)){
+			System.out.println("Car starts!");
+		}
+		else
+		{
+			System.out.println("Car does not start");
+			
+		}
+	}
+	
 }

@@ -14,7 +14,7 @@ class Vehicle
 	int tireSize;
 	
 	public int topSpeed;
-	public int CurrSpeed;
+	public int currSpeed;
 	public static String hornSound="Toot Toot";
 	public static String key ="123456";
 	public String fuelLevel;
@@ -33,6 +33,11 @@ class Vehicle
 		year=2019;
 		totalMiles=0;
 		tireSize=40;
+		topSpeed=120;
+		currSpeed=0;
+		hornSound="Beep Beep";
+		key="123456";
+		fuelLevel="Full";
 	}
 	
 	Vehicle(int p, int f, int m)
@@ -45,10 +50,15 @@ class Vehicle
 		weight=3500;
 		year=2019;
 		totalMiles=0;
-		tireSize=40;		
+		tireSize=40;
+		topSpeed=120;
+		currSpeed=0;
+		hornSound="Beep Beep";
+		key="123456";
+		fuelLevel="Full";
 	}
 	
-	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM, int tS)
+	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM, int tS, int topS, int cS, String hS, String k, String fL)
 	{
 		passengers = p;
 		fuelCap = f;
@@ -59,6 +69,11 @@ class Vehicle
 		year = y;
 		totalMiles=tM;
 		tireSize= tS;
+		topSpeed=topS;
+		currSpeed=cS;
+		hornSound=hS;
+		key=k;
+		fuelLevel=fL;
 	}
 	//Construtors ^
 	//			  |
@@ -73,7 +88,7 @@ class Vehicle
 	//Overloaded method to find the range
 	int range(int m, int fC)
 	{
-		return m * fC;
+		return m * fC;//m is miles, fC is fuelCap
 	}
 	
 	//Method to find the fuel needed for how long the journey is
@@ -85,22 +100,22 @@ class Vehicle
 	//Overloaded method to find the fuel needed for how long the journey is
 	double fuelneeded (int miles, int mp)
 	{ 
-		return miles/mp;
+		return miles/mp;//mp is mpg
 	}
-	
-	//Overloaded method to find how many refuels will be needed based on the journey length and the mpg
-	int refuel (int miles, int mp, int fC)
-	{
-		int x = miles/mp;
-		return x/fC+1;
-	}
-	
+
 	//Method to find how many refuels will be needed based on the journey length and the mpg
 	int refuel(int miles)
 	{
 		return miles/fuelCap + 1;
 	}
 	
+	//Overloaded method to find how many refuels will be needed based on the journey length and the mpg
+	int refuel (int miles, int mp, int fC)
+	{
+		int x = miles/mp;//mp is mpg
+		return x/fC+1;//fC is fuelCap
+	}
+		
 	//Method to find how many oil changes will be needed based on the journey length
 	int oilchange(int miles)
 	{
@@ -141,13 +156,13 @@ class Vehicle
 		key=a;
 		hornSound=b;
 		topSpeed=c;
-		CurrSpeed=d;
+		currSpeed=d;
 		fuelLevel=e;
 	}
 	
 	public void getVehicle()
 	{
-		System.out.println(key+" " +hornSound + " "+ topSpeed + " " + CurrSpeed+ " " + fuelLevel);
+		System.out.println(key+" " +hornSound + " "+ topSpeed + " " + currSpeed+ " " + fuelLevel);
 	}
 	
 }
@@ -161,13 +176,12 @@ class VehicleDREW
 		Scanner input = new Scanner(System.in);
 		Vehicle motorcycle= new Vehicle();
 		Vehicle corvette= new Vehicle(2, 15, 20);
-		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000, 40);
-		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000, 40);
+		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000, 40, 100, 0, "Hoot", "123456", "Full");
+		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000, 40, 120, 0, "Beep", "123456", "Full");
 		double gallons;
 		int refill;
 		int dist=0;
 		int oil;
-		String key="123456";
 		/*
 		System.out.print("\nHow many miles do you want to travel? Please enter here: ");
 		
@@ -209,7 +223,7 @@ class VehicleDREW
 		*/
 		
 		//test the start method
-		if (Vehicle.start(key))
+		if (Vehicle.start(minivan.key))
 			System.out.println("Car is started");
 		else 
 			System.out.println("Wrong key, car didnt start");

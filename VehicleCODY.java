@@ -13,7 +13,6 @@ class Vehicle {
 	int topSpeed;
 	int speed;
 	int fuelLevel;
-	String hornSound;
 	String key;
 	
 	int refuel;
@@ -22,7 +21,8 @@ class Vehicle {
     
 
 	
-Vehicle() // This is the default constructor "method" 
+Vehicle() /* This is the default constructor. 
+Charles mentioned that these can also be referred as a "constructor method", because it's technically a mehtod as well. */
 	{
 	passengers = 4;
 	fuelcap =  350;
@@ -53,7 +53,7 @@ Vehicle (int p, int f, int m) // This is a constructor
 	   
 
 	
-Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // This is a constructor
+Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)    // This is a constructor
 	{
 	passengers = p;
 	fuelcap =  f;
@@ -69,7 +69,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // T
 	
 	
 	
-	 public boolean startCar(String newKey) //This is a method that has a boolean in it. 
+	 public boolean startCar(String newKey)      //This is a method that is looking for a boolean vaule to return true or false. 
 	 {
 		if (newKey == key)
 		{
@@ -85,7 +85,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // T
 	
 	
 	
-	 int range() 
+	 int range()  //This is a method 
 	 {
 		return mpg *fuelcap;
 	 }
@@ -101,7 +101,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // T
 	 
 	 
 	 
-	 String honk()
+	 String honk()				    //This is a method 
 	 {
 		String honk= "Beep Beep";
 		return honk;
@@ -109,7 +109,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // T
 	 
 	 
 	 
-	 String motion()
+	 String motion()				 //This is a method 
 	 {
 		String motion= "Accelerating...";
 		return motion;
@@ -117,7 +117,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // T
 	 
 	 
 	 
-	 String brake1 ()
+	 String brake1 ()				//This is a method 
 	 {
 		String brake1= "Applying breaks";
 		return brake1;

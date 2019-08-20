@@ -8,18 +8,18 @@ class Vehicle {
 	int weight;     // weight of car in lbs
 	int year;       // year car was made
 	int totalmiles; // mileage car has
-	int topspeed;   // top speed of car
-	int speed;      // current speed of car
+	public int topspeed;   // top speed of car
+	public int speed;      // current speed of car
 	int fuellevel;  // current fuel level of car
-	String horn;    // sound of horn
-	String key;     // the correct key to start car
+	public String horn;    // sound of horn
+	public static String key = "WPS";     // the correct key to start car
 	
 	   // default constructor
 		Vehicle() {
 		}
 		
      //constructor with 9 variables
-	Vehicle(int p, int f, int m, int d, int ts, int w, int y, int tm){
+	Vehicle(int p, int f, int m, int d, int ts, int w, int y, int tm, int TS){
 		passengers = p;
 		fuelcap = f;
 		mpg = m;
@@ -28,8 +28,9 @@ class Vehicle {
 		weight = w;
 		year = y;
 		totalmiles = tm;
+		topspeed = TS;
 	}
-	
+			
         public String honkHorn() {
 			String honkHorn = "*FART*! (that's my horn)";
 			return honkHorn;
@@ -40,27 +41,35 @@ class Vehicle {
 	
 		int range() {	
 			return mpg * fuelcap;
-	    }
+		}
 		double fuelneeded(int miles) {
 			return(double) miles /mpg;
 		}	
 		double refill(int miles) {
 			return(double) miles / range();
 		}
+		
+		
 		private String accelerate() {
 			String motion = "Accelerating....";   // describes behavior in a private method
 			return motion;	
 		}
-			 String brake1 (){
-		String brake1= "Applying breaks";
-		return brake1;
- 	    }
-		
+
 		public void getCar() {
 		 System.out.println(accelerate());
 		}
 		
-		public boolean startCar(String usedKey) {
+		private String brake1(){
+		String stopping= " ...Applying breaks..";
+		return stopping;
+ 	    }
+		
+		public void getCar2(){
+		 System.out.println(brake1());
+		}
+		
+		
+	    public static boolean startCar(String usedKey) {
 			
 			if (usedKey == key)
 				return true; // car starts
@@ -72,24 +81,38 @@ class Vehicle {
 			
 	class VehicleMarcus {
 		public static void main(String[] args){
-	    Vehicle camaro = new Vehicle(2, 14, 12, 2, 25, 3000, 2055, 5500);
-		Vehicle f150 = new Vehicle(4, 20, 13, 4, 30, 5000, 1978, 100000);
+	    Vehicle camaro = new Vehicle(2, 14, 12, 2, 25, 3000, 2055, 5500, 140);
+		Vehicle f150 = new Vehicle(4, 20, 13, 4, 30, 5000, 1978, 100000, 85);
 		 double gallons;
 		 int dist = 252;
 		 String color, color1;
 		 int refill, refill2;
 		 int x = 666;
 		 String honk;
+		 String key = "WPS";
+		 int TS = 140;
 		
 		
 	    honk = camaro.honkHorn();
 		gallons = camaro.fuelneeded(dist);
 		color = camaro.color("polka dot");
 		refill = (int) camaro.refill(x);
-		camaro.getCar();                // statement that calls upon the other public method of the CAR class to retrieve stored attribute
+
+		
+		
+		{
+		if (Vehicle.startCar(key))
+		    System.out.println("Car is started");
+		else 
+			System.out.println("Wrong key, car didnt start");
+		}
+				camaro.getCar();                // statement that calls upon the other public method of the CAR class to retrieve stored attribute
 	
 		System.out.println("To go " + dist + " miles camaro will use " + gallons + " gallons of fuel. It has a cool " + color + " color."
-		+ " And to travel 666 miles, you will need to refill " + refill + " times." + "\n" + honk);
+		+ " And to travel 666 miles, you will need to refill " + refill + " times." + "\n" + honk + "\n" + " Oh, did I mention it has a top speed of " + TS +"?" 
+		+ " because it does.");
+				
+				camaro.getCar2();
 		}
 	}
 		
