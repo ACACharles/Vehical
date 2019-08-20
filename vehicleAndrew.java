@@ -9,7 +9,9 @@ class Vehicle{
 		int year;       // year car made
 		int range = fuelcap*mpg;
 		int mileage;// how many miles per tank
-		int doors;	
+		int tiresize;
+			
+			
 			Vehicle()
 		{		
 		passengers = 2;
@@ -20,12 +22,39 @@ class Vehicle{
 		year = 2019;
 		tiresize = 35 ;
 		mileage = 0;
-		color = Blue;
+		color = "Blue";
 		range = fuelcap*mpg;
 		}
 		
+			/*String color(String color)
+			{
+				return color;
+			}
+			int range()
+			{
+			return mpg * fuelcap;	
+			} */
+			
+			
 			Vehicle (int p, int fc,int mpg)
 		{
+		passengers = p;
+		fuelcap = fc;
+		mpg = mpg;
+		doors = 2;
+		tonnage = 2;
+		year = 2019;
+		tiresize = 35 ;
+		mileage = 0;
+		color = "Blue";
+		range = fuelcap*mpg;
+		
+		}
+				
+				
+			Vehicle(int p,int fc ,int mpg ,int ton,int yr,int drs,int mlg,String clr,int ts)
+		{
+		
 		passengers = p;
 		fuelcap = fc;
 		mpg = mpg;
@@ -33,24 +62,7 @@ class Vehicle{
 		tonnage = ton;
 		year = yr;
 		tiresize = ts ;
-		mileage = mlg;
-		color = Blue;
-		range = fuelcap*mpg;
-		
-		}
-				
-				
-			Vehicle(int p,int fc ,int mpg ,int drs ,int ton,int yr,int drs,int mlg,String clr)
-		{
-		
-		passengers = p;
-		fuelcap = fc;
-		mpg = mpg;
-		doors = drs;
-		tonnage = ton;
-		year = yr;
-		tiresizes = trs ;
-		mileage = mlg;
+		mileage = 0;
 		color = clr;
 		range = fuelcap*mpg;
 		
