@@ -182,7 +182,6 @@ class VehicleDREW
 		int refill;
 		int dist=0;
 		int oil;
-		String key="123456";
 		/*
 		System.out.print("\nHow many miles do you want to travel? Please enter here: ");
 		
@@ -224,7 +223,7 @@ class VehicleDREW
 		*/
 		
 		//test the start method
-		if (Vehicle.start(key))
+		if (Vehicle.start(minivan.key))
 			System.out.println("Car is started");
 		else 
 			System.out.println("Wrong key, car didnt start");
