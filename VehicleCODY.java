@@ -9,7 +9,10 @@ class Vehicle {
 	int weight;
 	int year;
 	int totalMiles;
-	int color;
+	int refuel;
+	String color;
+	
+    
 
 	// This is the default constructor
 Vehicle() 
@@ -17,11 +20,30 @@ Vehicle()
 	passengers = 4;
 	fuelcap =  350;
 	mpg = 30;
+	doors = 4;
+	tiresize = 20;
+	weight = 2500;
+	year = 2019;
+	totalMiles = 600;
+	color = blue;
+	
 	}
 	
 Vehicle (int p, int f, int m) 
+	{
+	passengers = p;
+	fuelcap =  f;
+	mpg = m;
+	doors = 4;
+	tiresize = 20;
+	weight = 2500;
+	year = 2019;
+	totalMiles = 600;
+	color = blue;
+	
+	}
 	// This the constructor
-	int refuel;
+
 	
 Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm,int c)
 	{
