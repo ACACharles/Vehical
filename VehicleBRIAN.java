@@ -18,13 +18,17 @@ class Vehicle {
  
 	
 	// Constructor
+	//CHARLES SAID:I would like the first 9 instance variables populated
+		//CHARLES SAID: overwriting parameters with instance (you the assingment backwards)
 	Vehicle (int m, int f, int p) {
+		
 		m = mpg;
 		f = fuelcap;
 		p = passengers;
 	}
 	
 	// Constructor
+	//CHARLES SAID: do not need to give data type for instance variables that are already declared
 	Vehicle () {
 	
 	int doors = 4;
@@ -69,7 +73,7 @@ class Vehicle {
 	{
 		return m * fC;
 	} 
-	
+	////////	//CHARLES SAID: MISSING FUEL NEEDED METHODS
 	double refillneeded() {
 		
 		int refill = totalMiles/mpg;
@@ -84,8 +88,12 @@ class Vehicle {
 	public static String horn() {
 		String motion = " Bang Bang........";
 		return motion; }
-	
-	
+/* CHARLES SAID
+
+	public static String carHorn() {
+		horn = " Bang Bang........";
+		return horn; }	
+*/	
 	public static String accelerate()
 	{ String motion = "Accelerating.....";
 		return motion; }

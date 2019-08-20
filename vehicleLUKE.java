@@ -172,11 +172,14 @@ public boolean startCar(String newKey) {
 					   
 					   
 				
-					  
+					  System.out.println(minivan.hornSound()) ; 	//CHARLES ADDED				  
 					  System.out.println(hornSound) ; 
 					 
+					   System.out.println(minivan.brake()) ; //CHARLES ADDED
 			 
-				
+						System.out.println(minivan.startCar("this key") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADDED
+
+						System.out.println(minivan.startCar(" 1234 ") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADDED
 		
 				}
 			
