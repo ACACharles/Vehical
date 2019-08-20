@@ -7,10 +7,13 @@ class Vehicle{
 		String color;   // color of cords
 		int tonnage;    // weight of car
 		int year;       // year car made
-		int range = fuelcap*mpg;
-		int mileage;// how many miles per tank
+		int mileage;
 		int tiresize;
-			
+		int topspeed;
+		int speed;
+		String hornSound;
+		int fuelLevel;
+		String Key = "carcar";
 			
 			Vehicle()
 		{		
@@ -23,17 +26,15 @@ class Vehicle{
 		tiresize = 35 ;
 		mileage = 0;
 		color = "Blue";
-		range = fuelcap*mpg;
+
+		
 		}
 		
-			/*String color(String color)
+			String color(String color)
 			{
 				return color;
 			}
-			int range()
-			{
-			return mpg * fuelcap;	
-			} */
+			
 			
 			
 			Vehicle (int p, int fc,int mpg)
@@ -47,7 +48,7 @@ class Vehicle{
 		tiresize = 35 ;
 		mileage = 0;
 		color = "Blue";
-		range = fuelcap*mpg;
+		
 		
 		}
 				
@@ -64,7 +65,8 @@ class Vehicle{
 		tiresize = ts ;
 		mileage = 0;
 		color = clr;
-		range = fuelcap*mpg;
+		
+		
 		
 		
 		
@@ -72,19 +74,61 @@ class Vehicle{
 		
 	
 	double refill(double gallons) {
-		return (double)  gallons / fuelcap;
+		return(double)  gallons / fuelcap;
+	}	
+	
+	int range() {
+		return(int) mpg*fuelcap;
 		
-	
-	
-		
-	
-	
 	}
+	
+	double fuelNeeded(){
+		return range()/ mpg ;
+	}
+	
+	public String accelerate(){
+		String motion = "Accelerating";
+		return motion;
+	}
+	
+	public String brakes(){
+		String carBrakes = "Car is slowing down";
+		return carBrakes;
+	}
+	
+	public String honkHorn(){
+		String beepHorn = "Beep Beep";
+		return beepHorn;
+	}
+	
+	public boolean startCar(String usedKey){
+		
+		if (usedKey == Key)
+		{
+		
+		System.out.println("Then start car.");
+		return true; // car starts
+		}
+		
+		else{
+		System.out.println("No start!");
+			return false;
+		}
+	}
+	
+		
+	
+	
+		
+	
+	
+	
 }
 
 class vehicleAndrew{
 	public static void main (String[] args){
 		Vehicle sportscar = new Vehicle();
+		Vehicle RangeRover = new Vehicle();
 		double gallons = 21;
 		int dist = 252;
 		double refill;
@@ -97,12 +141,13 @@ class vehicleAndrew{
 		sportscar.doors = 2;
 		sportscar.tonnage = 2;
 		sportscar.year = 2019;
-		sportscar.range = 252;
+		
 		
 		refill = sportscar.refill(gallons);
 		
 		
-		System.out.println("You will need to refill" + refill + "times" );
+		System.out.println(sportscar.honkHorn());
+		System.out.println("You will need to refill " + refill + " times" );
 			
 		
 	}	
