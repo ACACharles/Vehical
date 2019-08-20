@@ -17,6 +17,7 @@ class Vehicle
 	public int CurrSpeed;
 	public static String hornSound="Toot Toot";
 	public static String key ="123456";
+	public String fuelLevel;
 	
 	//			   |
 	//			   |
@@ -135,17 +136,18 @@ class Vehicle
 			return false;
 	}
 	
-	public void setVehicle(String a, String b, int c, int d)
+	public void setVehicle(String a, String b, int c, int d, String e)
 	{
 		key=a;
 		hornSound=b;
 		topSpeed=c;
 		CurrSpeed=d;
+		fuelLevel=e;
 	}
 	
 	public void getVehicle()
 	{
-		System.out.println(key+" " +hornSound + " "+ topSpeed + " " + CurrSpeed+ " ");
+		System.out.println(key+" " +hornSound + " "+ topSpeed + " " + CurrSpeed+ " " + fuelLevel);
 	}
 	
 }
@@ -205,6 +207,7 @@ class VehicleDREW
 		System.out.println("To go " + dist + " miles the corvette needs " + gallons + " gallons of fuel.\n");
 		System.out.println("The corvette is the color " + corvette.color + "\n");
 		*/
+		
 		//test the start method
 		if (Vehicle.start(key))
 			System.out.println("Car is started");
@@ -216,7 +219,7 @@ class VehicleDREW
 		
 		//Testing setVehicle and getVehicle
 		Vehicle testVehicle=new Vehicle();
-		testVehicle.setVehicle("123456", "Hoot", 120, 0);
+		testVehicle.setVehicle("123456", "Hoot", 120, 0, "Full");
 		testVehicle.getVehicle();
 	}
 }
