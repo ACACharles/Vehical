@@ -8,8 +8,14 @@ class Vehicle {
 	int tonage;
 	int modelYear;
 	int totalMiles;
+	int topSpeed;
+	int speed;
+	int fuelLevel;
+	String horn;
+	String key;
+	String color;
 	
-	String color; 
+ 
 	
 	// Constructor
 	Vehicle (int m, int f, int p) {
@@ -31,10 +37,10 @@ class Vehicle {
 	int totalMiles = 3400;
 	int topSpeed = 130;
 	int speed = 65;
-	int fuelLevel
-	String Horn = "Beep";
-	String Key = " Remote ";
-	String Color = "Electric Blue";
+	int fuelLevel;
+	String horn = "Beep";
+	String key = " Remote ";
+	String color = "Electric Blue";
 	}
 	
 	// Constructor
@@ -49,50 +55,60 @@ class Vehicle {
 		fuelcap = f;
 		mpg = m;
 		totalMiles = tM; 
-		topSpeed = tS;
-		speed =s;
-		fuelLevel = fL;
-		horn = h;
-		key = k;
+		
 		
 		
 	}
 		
 	// Methods	
-	int range(int m, int f) {
+	int range() 
+	{
 		return mpg * fuelcap;
 	}
-	double fuelneeded(int tM, int m) {
-		return (double) miles * mpg;
+	int range (int m, int fC)
+	{
+		return m * fC;
+	} 
+	
+	double refillneeded() {
+		
+		int refill = totalMiles/mpg;
+		return refill/fuelcap +1;
+		
 	}
-	double refillneeded( int tM, int r) {
-		return miles / range() ;
+	double refillneeded( int tM, int m, int fC) {
+		int refuel = tM/m;
+	return refuel/fC + 1;
 	}
 
-	public static String accelerate() {
+	public static String horn() {
 		String motion = " Bang Bang........";
 		return motion; }
 	
 	
 	public static String accelerate()
 	{ String motion = "Accelerating.....";
-		return motion ; }
+		return motion; }
 		
 	public static String brake()
 	{ String motion = "Deer....";
-	return motion ; }
+		return motion; }
 	
-	static void display(boolean USEDkey)
-	{	if (USEDkey == key);
-		System.out.println(" Engine fires up."); }
-			return true:
+	 public boolean display(String USEDkey)
+	{	
+		if (USEDkey == key)
 		{
-			else
+			System.out.println("Engine fires up"); 
+			return true;
 		}
-	{	System.out.println (" Alarm sounds.");
-			return false; }
 		
-	
+		else
+		{	
+			System.out.println ("Alarm sounds");
+			return false; 
+		}
+		
+	}
 }
 
 class VehicleBRIAN {
@@ -101,23 +117,25 @@ class VehicleBRIAN {
 		Vehicle truck = new Vehicle();
 		Vehicle jeep = new Vehicle();
 	double gallons ;
-	int dist = 252;
+	int tM = 252;
 	
 	truck.passengers = 4 ;
 	truck.fuelcap = 14;
 	truck.mpg = 12;
+	truck.totalMiles = 465;
 	
 	jeep.passengers = 4;
 	jeep.fuelcap = 12;
 	jeep.mpg = 6;
+	jeep.totalMiles = 465;
 	
-	gallons = truck.refillneeded(dist);
+	gallons = truck.refillneeded();
 	
-	System.out.println("To go " + dist + " refill truck needs " +  gallons + " gallons of fuel ");
+	System.out.println("To go " + tM + " refill truck needs " +  gallons + " gallons of fuel ");
 	
-	gallons = jeep.refillneeded(dist);
+	gallons = jeep.refillneeded();
 	
-	System.out.println("To go " + dist + " refill jeep needs " +  gallons + " gallons of fuel ");
+	System.out.println("To go " + tM + " refill jeep needs " +  gallons + " gallons of fuel ");
 	
 	}
 }
