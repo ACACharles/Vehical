@@ -21,8 +21,8 @@ class Vehicle {
 	
     
 
-	// This is the default constructor
-Vehicle() 
+	
+Vehicle() // This is the default constructor "method" 
 	{
 	passengers = 4;
 	fuelcap =  350;
@@ -35,8 +35,9 @@ Vehicle()
 	color = "blue";
 	
 	}
+		
 	
-Vehicle (int p, int f, int m) 
+Vehicle (int p, int f, int m) // This is a constructor
 	{
 	passengers = p;
 	fuelcap =  f;
@@ -49,10 +50,10 @@ Vehicle (int p, int f, int m)
 	color = "blue";
 	
 	}
-	// This the constructor
+	   
 
 	
-Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)
+Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c) // This is a constructor
 	{
 	passengers = p;
 	fuelcap =  f;
@@ -68,7 +69,8 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)
 	
 	
 	
-	 public boolean startCar(String newKey) {
+	 public boolean startCar(String newKey) //This is a method that has a boolean in it. 
+	 {
 		if (newKey == key)
 		{
 			System.out.println("Key match, vehicle starts."); 
@@ -97,11 +99,15 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)
 	 }
 	 
 	 
+	 
+	 
 	 String honk()
 	 {
 		String honk= "Beep Beep";
 		return honk;
 	 }
+	 
+	 
 	 
 	 String motion()
 	 {
@@ -109,10 +115,12 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)
 		return motion;
 	 }
 	 
-	 String break1 ()
+	 
+	 
+	 String brake1 ()
 	 {
-		String break1= "Applying breaks";
-		return break1;
+		String brake1= "Applying breaks";
+		return brake1;
 	 }
 
 
