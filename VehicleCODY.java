@@ -4,7 +4,12 @@ class Vehicle {
 	int passengers; 
 	int fuelcap;
 	int mpg;
-	int refuel;
+	int doors;
+	int tiresize;
+	int weight;
+	int year;
+	int totalMiles;
+	int color;
 
 	// This is the default constructor
 Vehicle() 
@@ -16,12 +21,24 @@ Vehicle()
 	
 Vehicle (int p, int f, int m) 
 	// This the constructor
+	int refuel;
+	
+Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm,int c)
 	{
 	passengers = p;
-	fuelcap = f;
+	fuelcap =  f;
 	mpg = m;
+	doors = d;
+	tiresize = t;
+	weight = w;
+	year = y;
+	totalMiles = tm;
+	color = c;
 	}
-
+	
+	
+	
+	}
 	
 	 int range() 
 	 {
@@ -38,7 +55,11 @@ Vehicle (int p, int f, int m)
 }
 class VehicleCody {
 	public static void main (String[] args) {
-		
+	
+	Vehicle default1 = new Vehicle();	
+	System.out.println(" Default vehicle specs " + " Passenger: " + default1.passengers + " Fuelcap: " + default1.fuelcap + " Mpg: " + default1.mpg);
+	
+	
 	System.out.println(" Please enter passenger number, fuelcap, and mpg");
 	Scanner specs = new Scanner(System.in);
 	int p = specs.nextInt();
@@ -55,6 +76,8 @@ class VehicleCody {
 	double gallons;
 	double refillnumber;
 	int dist = 252;
+	
+	
 	
 	gallons = minivan.fuelneeded(dist);
 	
