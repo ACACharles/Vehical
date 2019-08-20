@@ -3,7 +3,7 @@ class Vehicle {
 	int fuelcap;
 	int mpg;
 	int doors;
-	int tires;
+	int tiresize;
 	int year;
 	int totalmiles;
 	int tonage;
@@ -15,6 +15,25 @@ class Vehicle {
 		passengers = p;
 		fuelcap = f;
 		mpg = m;
+		doors = 2; 
+		tiresize = 24;
+		year = 2009;
+		totalmiles = 110523;
+		tonage = 1100; 
+		color = "Very Blue";
+	}
+	
+	//Constructor with 9 varibles
+	Vehicle(int p, int f, int m, int d, int t, int y, int o, int w, String c) {
+		passengers = p; 
+		fuelcap =  f; 
+		mpg = m; 
+		doors = d;
+		tiresize = t;
+		year = y; 
+		totalmiles = o;
+		tonage = w;
+		color = c;
 	}
 	
 	//Constructor for default Vehicle. 
@@ -22,6 +41,12 @@ class Vehicle {
 		passengers = 4;
 		fuelcap = 18; 
 		mpg = 24;
+		doors = 4; 
+		tiresize = 22;
+		year = 2012;
+		totalmiles = 75023;
+		tonage = 1600; 
+		color = "Magnetic Gray";
 	} 
 	
 	//Return the range.
@@ -46,6 +71,8 @@ class vehicleZACKERY {
 		Vehicle minivan = new Vehicle(7,16,21);
 		Vehicle sportscar = new Vehicle(2,14,12);
 		Vehicle Truck = new Vehicle();
+		Vehicle VWthing = new Vehicle(8,10,10,4,26,1952,226758,1850,"Olive Green");
+			
 		double gallons;
 		double refuels;
 		int dist = 252;
@@ -73,13 +100,14 @@ class vehicleZACKERY {
 		
 		
 		//displaying sportscar data
-		gallons = sportscar.fuelneeded(dist);3
+		gallons = sportscar.fuelneeded(dist);
 		
 		refuels = sportscar.numrefill(dist);
 		
 		System.out.println("To go " + dist + " miles the sportscar needs " + gallons + " gallons of fuel.");
 		
 		System.out.println("To go " + dist + " mile the sportscar needs " + refuels + " refuels ");
+		
 		
 		//displaying Truck data
 		gallons = Truck.fuelneeded(dist);
@@ -91,9 +119,16 @@ class vehicleZACKERY {
 		System.out.println("To go " + dist + " mile the Truck needs " + refuels + " refuels ");
 		
 		
+		//displaying VWthing data
+		gallons = VWthing.fuelneeded(dist);
 		
+		refuels = VWthing.numrefill(dist);
+		
+		System.out.println("To go " + dist + " miles the VWthing needs " + gallons + " gallons of fuel.");
+		
+		System.out.println("To go " + dist + " mile the VWthing needs " + refuels + " refuels ");
+		
+		//Part A Completed 
 		}
-	}
-
-		
+	}	
 	
