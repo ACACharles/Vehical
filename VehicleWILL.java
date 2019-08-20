@@ -9,6 +9,10 @@ class Vehicle
 	int weight; //weight of vehicle
 	int year; // year the car was made
 	int totalmiles; //mileage of car
+	int topspeed; //top speed of vehicle
+	int fuellevel; 
+	String hornsound;
+	String key;
 	
 //Below is the constructor for vehicles
 	Vehicle (int p, int f, int m, int d, int drs, int t, String c, int w, int y, int tm)
@@ -55,11 +59,23 @@ class Vehicle
 				{
 					return mpg * fuelcap;
 				}
+			//overloaded range
+				int range (int m, int c)
+				{
+					mpg = m; fuelcap = c;
+					return m * c;
+				}
 				
 				//method to compute fuel needed for given distance
 					double fuelneeded (int miles) 
 					{
 						return (double) miles / mpg;
+					}
+				//overload fuelneeded
+					double fuelneeded (int miles, int m)
+					{
+						mpg = m;
+						return (double) miles / mpg; 
 					}
 					
 					//method to compute number of times vehicle needs to refill
@@ -67,6 +83,36 @@ class Vehicle
 						{
 							return (int) 252 / mpg / fuelcap;
 						}
+					//overload for refill	
+						int refillneeded (int miles, int c, int m)
+						{
+							mpg = m; fuelcap = c; 
+							return (int) 252 / m / c ;
+						}
+						
+						//horn sound
+							public static String honkhorn;
+							{
+								String Horn = "hooooooonky";
+							}
+						//accelerate
+							public static String accelerate;
+							{
+								String accelerate = "accelerating...";
+							}	
+						//break
+							public static String breaktime;
+							{
+								String breaktime = "is slowing down";
+							}
+							
+							// startcar
+							public static boolean startCar(String USEDkey)
+							{
+								if (keyused == key) 
+									return true ;
+								else return false ;
+							}
 }
 
 class VehConsDemo
