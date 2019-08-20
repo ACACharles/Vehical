@@ -35,7 +35,7 @@ class Vehicle
 	}
 	
 	//This is the constructor.
-	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM)
+	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM, int tS)
 	{
 		passengers = p;
 		fuelCap = f;
@@ -45,6 +45,7 @@ class Vehicle
 		weight = w;
 		year = y;
 		totalMiles=tM;
+		int tireSize= tS;
 	}
 	
 	int range()
@@ -78,8 +79,8 @@ class VehicleDREW
 	throws java.io.IOException
 	{
 		Vehicle motorcycle= new Vehicle();
-		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000);
-		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000);
+		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000, 40);
+		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000, 40);
 		double gallons;
 		int refill;
 		int dist=0;
@@ -123,7 +124,7 @@ class VehicleDREW
 		oil= sportscar.oilchange(dist);
 		
 		System.out.println("To go " + dist + " miles the sportscar will need " + oil + " oil change(s).\n");
-		
+		//Testing the empty Constructor
 		System.out.println("The motorcycle has a mpg of " + motorcycle.mpg);
 	}
 }
