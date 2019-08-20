@@ -9,8 +9,15 @@ class Vehicle {
 	int weight;
 	int year;
 	int totalMiles;
-	int refuel;
 	String color;
+	int topSpeed;
+	int speed;
+	int fuelLevel;
+	String hornSound;
+	String key;
+	
+	int refuel;
+	
 	
     
 
@@ -25,7 +32,7 @@ Vehicle()
 	weight = 2500;
 	year = 2019;
 	totalMiles = 600;
-	color = blue;
+	color = "blue";
 	
 	}
 	
@@ -39,13 +46,13 @@ Vehicle (int p, int f, int m)
 	weight = 2500;
 	year = 2019;
 	totalMiles = 600;
-	color = blue;
+	color = "blue";
 	
 	}
 	// This the constructor
 
 	
-Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm,int c)
+Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)
 	{
 	passengers = p;
 	fuelcap =  f;
@@ -60,21 +67,59 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm,int c)
 	
 	
 	
-	}
+	
+	 public boolean startCar(String newKey) {
+		if (newKey == key)
+		{
+			System.out.println("Key match, vehicle starts."); 
+			return true;
+		}
+	    else 
+	    {
+			System.out.println("Key doesn't match, vehicle does not starts.");
+			return false;
+	    }
+	 }
+	
+	
 	
 	 int range() 
 	 {
-	 return mpg *fuelcap;
+		return mpg *fuelcap;
 	 }
-	 double fuelneeded (int miles)
+		double fuelneeded (int miles)
 	 {
-	 return (double) miles / mpg;
+		return (double) miles / mpg;
 	 }
-	  double refuel (int miles)
+		double refuel (int miles)
 	 {
-	 return (double) miles / (mpg * fuelcap);
+		return (double) miles / (mpg * fuelcap);
 	 }
+	 
+	 
+	 String honk()
+	 {
+		String honk= "Beep Beep";
+		return honk;
+	 }
+	 
+	 String motion()
+	 {
+		String motion= "Accelerating...";
+		return motion;
+	 }
+	 
+	 String break1 ()
+	 {
+		String break1= "Applying breaks";
+		return break1;
+	 }
+
+
 }
+
+
+
 class VehicleCody {
 	public static void main (String[] args) {
 	
