@@ -8,9 +8,14 @@ class Vehicle {
 	int totalmiles;
 	int tonage;
 	int distance;
+	int topspeed; 
+	int speed;
+	int fuellevel;
+	String key; 
+	String hornsound;
 	String color;
 	
-	//This is a constructor for the Vehicle.
+	//This is a constructor for the minivan and sportscar. 
 	Vehicle(int p, int f, int m) {
 		passengers = p;
 		fuelcap = f;
@@ -62,9 +67,28 @@ class Vehicle {
 	//Number of refuels needed
 	int numrefill(int miles) {
 		return (int) miles / range();
+	}
+	
+	//Honking the horn with hornsound
+	
+	String honk() {
+		return hornsound;
+	}
+	
+		
+	String forwardmotion() {
+		return "accelerating"; 	
 		
 	}
+	
+	String slowdown() {
+		return "breaking";
+	
+	}
+	
+	
 }
+
 
 class vehicleZACKERY {
 	public static void main (String args[]) {
