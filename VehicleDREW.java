@@ -19,12 +19,12 @@ class Vehicle
 		passengers=2;
 		fuelCap=20;
 		mpg=20;
-		int doors=4;
-		String color="Lime Green";
-		int weight=4000;
-		int year=2019;
-		int totalMiles=0;
-		int tireSize=40;
+		doors=4;
+		color="Lime Green";
+		weight=4000;
+		year=2019;
+		totalMiles=0;
+		tireSize=40;
 	}
 	
 	Vehicle(int p, int f, int m)
@@ -32,6 +32,12 @@ class Vehicle
 		passengers=p;
 		fuelCap=f;
 		mpg=m;
+		doors=2;
+		color="Silver";
+		weight=3500;
+		year=2019;
+		totalMiles=0;
+		tireSize=40;		
 	}
 	
 	//This is the constructor.
@@ -45,26 +51,26 @@ class Vehicle
 		weight = w;
 		year = y;
 		totalMiles=tM;
-		int tireSize= tS;
+		tireSize= tS;
 	}
-	
+	//Method to find the range
 	int range()
 	{
 		return mpg * fuelCap;
 	}
-	
+	//Method to find the fuel needed for how long the journey is
 	double fuelneeded(int miles)
 	{
 		return (double) miles/mpg;
 	}
-	
+	//Method to find how many refuels will be needed based on the journey length and the mpg
 	int refuel(int miles)
 	{
 		int x = miles/mpg;
 		return x/fuelCap + 1;
 	}
 	
-	
+	//Method to find how many oil changes will be needed based on the journey length
 	int oilchange(int miles )
 	{
 		return miles/1000;
@@ -79,6 +85,7 @@ class VehicleDREW
 	throws java.io.IOException
 	{
 		Vehicle motorcycle= new Vehicle();
+		Vehicle corvette= new Vehicle(2, 15, 20);
 		Vehicle minivan = new Vehicle(7, 16, 21, 4, "Red", 2500, 2000, 50000, 40);
 		Vehicle sportscar= new Vehicle(2, 14, 12, 2, "Blue", 2000, 2018, 2000, 40);
 		double gallons;
@@ -124,8 +131,14 @@ class VehicleDREW
 		oil= sportscar.oilchange(dist);
 		
 		System.out.println("To go " + dist + " miles the sportscar will need " + oil + " oil change(s).\n");
+		
 		//Testing the empty Constructor
-		System.out.println("The motorcycle has a mpg of " + motorcycle.mpg);
+		System.out.println("The motorcycle has a mpg of " + motorcycle.mpg + "\n");
+		
+		//Testing the constructor with 3 variables passed in
+		gallons = (int) corvette.fuelneeded(dist);
+		System.out.println("To go " + dist + " miles the corvette needs " + gallons + " gallons of fuel.\n");
+		System.out.println("The corvette is the color " + corvette.color + "\n");
 	}
 }
 
