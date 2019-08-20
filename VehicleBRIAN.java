@@ -7,29 +7,39 @@ class Vehicle {
 	int tireSize;
 	int tonage;
 	int modelYear;
-	int dist;
-	String color;
+	int totalMiles;
+	String color; 
 	
-	Vehicle(int p, int f, int m) {
-		passengers = p;
-		fuelcap = f;
-		mpg = m;
-	}	
+	
+	
+	// Constructor
 	Vehicle () {
 	
 	int doors = 4;
-	int tiresize = 34;
+	int tireSize = 34;
 	int tonage = 3500;
 	int modelYear = 1964;
+	int passengers = 4;
+	int fuelcap = 14;
+	int mpg = 6;
+	int totalMiles = 3400;
 	String Color = "Electric Blue";
-			
+	}
+	// Constructor
+	Vehicle(int d, int tS, int w, int y, int p, int f, int m, int tM, String c) 
+	{
+		door = d;
+		tireSize = tS;
+		tonage = w;
+		modelYear = y;
+		color = c;
+		passsengers = p;
+		fuelcap = f;
+		mpg = m;
+		totalMiles = tM; 
+	}
 		
-	}	
-	
-	
-	
-	
-
+	// Methods	
 	int range() {
 		return mpg * fuelcap;
 	}
