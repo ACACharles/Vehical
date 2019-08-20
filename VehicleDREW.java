@@ -72,8 +72,7 @@ class Vehicle
 	//Overloaded method to find the range
 	int range(int m, int fC)
 	{
-		mpg=m; fuelCap=fC;
-		return mpg * fuelCap;
+		return m * fC;
 	}
 	
 	//Method to find the fuel needed for how long the journey is
@@ -85,23 +84,20 @@ class Vehicle
 	//Overloaded method to find the fuel needed for how long the journey is
 	double fuelneeded (int miles, int mp)
 	{ 
-		int mpg=mp;
-		return miles/mpg;
+		return miles/mp;
 	}
 	
 	//Overloaded method to find how many refuels will be needed based on the journey length and the mpg
 	int refuel (int miles, int mp, int fC)
 	{
-		mpg=mp; fuelCap=fC;
-		int x = miles/mpg;
-		return x/fuelCap+1;
+		int x = miles/mp;
+		return x/fC+1;
 	}
 	
 	//Method to find how many refuels will be needed based on the journey length and the mpg
 	int refuel(int miles)
 	{
-		int x = miles/mpg;
-		return x/fuelCap + 1;
+		return miles/fuelCap + 1;
 	}
 	
 	//Method to find how many oil changes will be needed based on the journey length
@@ -218,6 +214,7 @@ class VehicleDREW
 		//Testing horn
 		System.out.println(Vehicle.honkHorn());
 		
+		//Testing setVehicle and getVehicle
 		Vehicle testVehicle=new Vehicle();
 		testVehicle.setVehicle("123456", "Hoot", 120, 0);
 		testVehicle.getVehicle();
