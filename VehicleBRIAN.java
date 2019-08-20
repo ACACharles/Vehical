@@ -10,7 +10,12 @@ class Vehicle {
 	int totalMiles;
 	String color; 
 	
-	
+	// Constructor
+	Vehicle (int m, int f, int p) {
+		m = mpg;
+		f = fuelcap;
+		p = passengers;
+	}
 	
 	// Constructor
 	Vehicle () {
@@ -21,10 +26,11 @@ class Vehicle {
 	int modelYear = 1964;
 	int passengers = 4;
 	int fuelcap = 14;
-	int mpg = 6;
+	int mpg = 12;
 	int totalMiles = 3400;
 	String Color = "Electric Blue";
 	}
+	
 	// Constructor
 	Vehicle(int d, int tS, int w, int y, int p, int f, int m, int tM, String c) 
 	{
