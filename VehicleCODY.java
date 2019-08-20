@@ -13,7 +13,6 @@ class Vehicle {
 	int topSpeed;
 	int speed;
 	int fuelLevel;
-	String hornSound;
 	String key;
 	
 	int refuel;
