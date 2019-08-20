@@ -2,32 +2,43 @@ import java.util.Scanner;
 
 class Vehicle
 {
+	//These are the instance variables
 	int passengers;
-	int fuelcap;
+	int fuelCap;
 	int mpg;
 	int doors;
 	String color;
 	int weight;
 	int year;
 	int totalMiles;
+	int tireSize;
 	
+	//This is the empty constructor
 	Vehicle()
 	{
 		passengers=2;
-		fuelcap=20;
+		fuelCap=20;
 		mpg=20;
 		int doors=4;
 		String color="Lime Green";
 		int weight=4000;
 		int year=2019;
 		int totalMiles=0;
+		int tireSize=40;
+	}
+	
+	Vehicle(int p, int f, int m)
+	{
+		passengers=p;
+		fuelCap=f;
+		mpg=m;
 	}
 	
 	//This is the constructor.
 	Vehicle(int p, int f, int m, int d, String c, int w, int y, int tM)
 	{
 		passengers = p;
-		fuelcap = f;
+		fuelCap = f;
 		mpg = m;
 		doors = d;
 		color = c;
@@ -38,7 +49,7 @@ class Vehicle
 	
 	int range()
 	{
-		return mpg * fuelcap;
+		return mpg * fuelCap;
 	}
 	
 	double fuelneeded(int miles)
@@ -49,7 +60,7 @@ class Vehicle
 	int refuel(int miles)
 	{
 		int x = miles/mpg;
-		return x/fuelcap + 1;
+		return x/fuelCap + 1;
 	}
 	
 	
@@ -116,3 +127,5 @@ class VehicleDREW
 		System.out.println("The motorcycle has a mpg of " + motorcycle.mpg);
 	}
 }
+
+//Part A completed.
