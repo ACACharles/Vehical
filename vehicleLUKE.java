@@ -110,7 +110,11 @@ public boolean startCar(String newKey) {
 			// Return the range.
 				int range() {
 				 return mpg * fuelcap;
-		}
+				}
+				int range(int m, int c) {
+					return m * c ; 
+				}
+				
 		
 			String accelerate() {
 			 String motion = "Accelerating...";
@@ -131,14 +135,21 @@ public boolean startCar(String newKey) {
 		
 				double fuelneeded (int miles) 
 		{
-			     return (double) miles / mpg ;
+					return (double) miles / mpg ;
+		}
+				double fuelneeded (int d, int m) 
+		{
+					return (double)  d /  m ; 
 		}
 				
 				double refuel (int miles)
 				{
 			      return (double) miles / (mpg * fuelcap) ; 
 		}
-		
+				double refuel ( int miles, int d , int r )
+				{ 
+					return (double) miles / ( d *  r);
+				}
 		 
 		
 	}
@@ -172,14 +183,19 @@ public boolean startCar(String newKey) {
 					   
 					   
 				
-					  System.out.println(minivan.hornSound()) ; 	//CHARLES ADDED				  
-					  System.out.println(hornSound) ; 
-					 
-					   System.out.println(minivan.brake()) ; //CHARLES ADDED
-			 
-						System.out.println(minivan.startCar("this key") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADDED
+					  
+						System.out.println(minivan.hornSound()) ; 
+						
+							System.out.println(hornSound); 
+						
+								System.out.println(minivan.brake()); 
+						
+									System.out.println(minivan.startCar("this key") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADDED
 
-						System.out.println(minivan.startCar(" 1234 ") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADDED
+										System.out.println(minivan.startCar(" 1234 ") ? "woot woot you win" : "Bum bum bummmmm you fail"); //CHARLES ADD
+						
+			 
+				
 		
 				}
 			
