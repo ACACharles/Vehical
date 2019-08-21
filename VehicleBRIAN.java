@@ -15,15 +15,16 @@ class Vehicle {
 	String key;
 	String color;
 	
+	Vehicle (int p, int fC, int m, int d, int tS, int t, int y, int tM, int mph, int s, int fL, String c, String h, String k)
 	{
 	passengers = p;
 	fuelcap = fC;
 	mpg = m;
 	doors = d;
-	tiresize = tS;
+	tireSize = tS;
 	tonage = t;
 	modelYear = y;
-	total miles = tM;
+	totalMiles = tM;
 	topSpeed = tS;
 	speed = s;
 	fuelLevel = fL;
@@ -32,7 +33,25 @@ class Vehicle {
 	key = k;
 	}
 	
-	Vehicle () 
+	Vehicle (int p, int m, int fC) 
+	
+	{
+	doors = 4;
+	tireSize = 34;
+	tonage = 3500;
+	modelYear = 1964;
+	passengers = p;
+	fuelcap = fC;
+	mpg = m;
+	totalMiles = 3400;
+	topSpeed = 130;
+	speed = 65;
+	horn = "Beep";
+	key = " Remote ";
+	color = "Electric Blue";
+	}
+	
+	Vehicle()
 	{
 	doors = 4;
 	tireSize = 34;
@@ -48,45 +67,41 @@ class Vehicle {
 	key = " Remote ";
 	color = "Electric Blue";
 	}
-	
 
 	int range() {
-		return mpg * fuelcap;
+	return mpg * fuelcap;
 	}
+	
+	
+	//Overloaded Range
 	int range (int m, int fC)
-	{	
+	{
+	mpg = m; fuelcap = fC;
 	return m * fC;
 	}
 	
-	//Overloaded Range
-	int range (int m, int c)
+	double fuelneeded(int tM) 
 	{
-	mpg = m; fuelcap = c;
-	return m * c;
-	}
-	
-	double fuelneeded(int miles) 
-	{
-	return (double) miles * mpg;
+	return (double) totalMiles * mpg;
 	}
 	
 	//Overloaded Fuel Needed
-	double fuelneeded (int miles, int m)
+	double fuelneeded (int tM, int m)
 	{
 	mpg = m;
-	return (double) miles / mpg; 
+	return (double) tM / m; 
 	}
 	
-	double refillneeded( int miles) 
+	double refillneeded( int tM) 
 	{
-		return miles / range() ;
+		return tM / range();
 	}
 	
 	// Overloaded Refill Needed
-	int refillneeded (int miles, int c, int m)
+	int refillneeded (int tM, int fC, int m)
 	{
-	mpg = m; fuelcap = c; 
-	return (int) 252 / m / c ;
+	mpg = m; fuelcap = fC; 
+	return (int) 252 / m / fC+1 ;
 	}
 	
 	
@@ -137,7 +152,7 @@ class VehicleBRIAN{
 		Vehicle truck = new Vehicle();
 		Vehicle jeep = new Vehicle();
 	double gallons ;
-	int dist = 252;
+	int tM = 252;
 	
 	truck.passengers = 4 ;
 	truck.fuelcap = 14;
@@ -147,13 +162,13 @@ class VehicleBRIAN{
 	jeep.fuelcap = 12;
 	jeep.mpg = 6;
 	
-	gallons = truck.refillneeded(dist);
+	gallons = truck.refillneeded(tM);
 	
-	System.out.println("To go " + dist + " refill truck needs " +  gallons + " gallons of fuel ");
+	System.out.println("To go " + tM + " refill truck needs " +  gallons + " gallons of fuel ");
 	
-	gallons = jeep.refillneeded(dist);
+	gallons = jeep.refillneeded(tM);
 	
-	System.out.println("To go " + dist + " refill jeep needs " +  gallons + " gallons of fuel ");
+	System.out.println("To go " + tM + " refill jeep needs " +  gallons + " gallons of fuel ");
 	
 	}
 }
