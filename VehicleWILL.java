@@ -1,5 +1,8 @@
+import java.util.Scanner;
+
 class Vehicle 
 {
+	//These are variables
 	int passengers; //number of passengers
 	int fuelcap; //ammount of fuel vehicle can hold in gallons
 	int mpg; //miles per gallon
@@ -10,9 +13,10 @@ class Vehicle
 	int year; // year the car was made
 	int totalmiles; //mileage of car
 	int topspeed; //top speed of vehicle
+	int speed;
 	int fuellevel; 
-	String hornsound;
-	String key;
+	public static String hornsound;
+	static String key = "1990";
 	
 //Below is the constructor for vehicles
 	Vehicle (int p, int f, int m, int d, int drs, int t, String c, int w, int y, int tm)
@@ -91,37 +95,51 @@ class Vehicle
 						}
 						
 						//horn sound
-							public static String honkhorn;
+							public String honk()
 							{
-								String Horn = "hooooooonky";
-							}
+								return "Hoooooooonk";
+							};
 						//accelerate
-							public static String accelerate;
+							public String accelerate()
 							{
-								String accelerate = "accelerating...";
-							}	
+								return "zoom zoom";
+							};	
 						//break
-							public static String breaktime;
+							public String brakes()
 							{
-								String breaktime = "is slowing down";
-							}
+								return "Initiate velocity slowing mechanism";
+							};
 							
-							// startcar
-							public static boolean startCar(String USEDkey)
+						/*	// startcar
+							public void startCar(String keyused)
 							{
-								if (keyused == key) 
-									return true ;
-								else return false ;
-							}
+								if (Vehicle.start(key)) 
+								{
+									System.out.println ("Car started.");
+								}
+								else
+									System.out.println ("Car didn't start.");
+								
+							};*/
+							
+							public static boolean start(String keyUsed)
+							{
+								if (keyUsed==key)
+									return true;
+								else
+									return false;
+							};
 }
 
 class VehConsDemo
 {
 	public static void main (String [] args) //construct vehicles
+	
 	{
 		Vehicle minivan = new Vehicle (7, 16, 21);
 		Vehicle sportscar = new Vehicle (2, 14, 12);
 		Vehicle sedan = new Vehicle ();
+		Scanner input = new Scanner(System.in);
 		double gallons;
 		double gasrefill;
 		int dist = 252;
@@ -137,5 +155,19 @@ class VehConsDemo
 	gallons = sedan.fuelneeded (dist);
 	gasrefill = sedan.refillneeded (dist);
 	System.out.println ("To go " + dist + " miles the sedan needs " + gallons + "gallons of fuel. They will need to refuel " + gasrefill + " times.");
-   }
-}
+ 
+	System.out.println(minivan.honk());
+	System.out.println(minivan.accelerate());
+	System.out.println(minivan.brakes());
+	//System.out.println(minivan.start());
+
+		
+			if (Vehicle.start(minivan.key)) 
+			//{
+				System.out.println ("Car started.");
+			
+			else
+				System.out.println ("Car didn't start.");
+			//}
+	}
+ }
