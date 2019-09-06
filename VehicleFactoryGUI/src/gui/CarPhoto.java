@@ -7,10 +7,12 @@ public class CarPhoto extends CarFactory {
 
 
 	
-	public CarPhoto(int color) {
+	public CarPhoto() {
 		// TODO Auto-generated constructor stub
 
 		ImageIcon answer = null;
+		
+		int color = CarFactory.color;
 
 		ImageIcon imgBlack = new ImageIcon("black_96.png");
 		// lblBlack= new JLabel(imgBlack);

@@ -20,18 +20,20 @@ public class ActionMenu extends JFrame {
 	private static JPanel contentPane;
 	private static JLabel lblCarPic;
 	public static ImageIcon answer;
+	
+	ImageIcon imgBlack = new ImageIcon("black_96.png");
+	ImageIcon imgBlue = new ImageIcon("blue2.png");
+	ImageIcon imgRed = new ImageIcon("red.png");
+	ImageIcon imgSilver = new ImageIcon("silver.png");
+	ImageIcon imgPurp = new ImageIcon("purp.png");
+	ImageIcon imgYellow = new ImageIcon("yellow.png");
+	
 
-	//CarPhoto pickPhoto = new CarPhoto();
-	
-	//JLabel lblCarPic = new JLabel("");
-	
-	/**
-	 * Create the frame.
-	 */
 	public ActionMenu() {
+		
+		CarPhoto();
 
 		setVisible(true);
-		//new CarPhoto(CarFactory.color);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 726, 651);
@@ -101,7 +103,7 @@ public class ActionMenu extends JFrame {
 		lblRange.setBounds(10, 420, 136, 34);
 		contentPane.add(lblRange);
 
-		lblCarPic = new JLabel("");
+		lblCarPic = new JLabel("your car here");
 		lblCarPic.setIcon(answer);
 		lblCarPic.setBounds(156, 112, 330, 265);
 		contentPane.add(lblCarPic);
@@ -210,10 +212,30 @@ public class ActionMenu extends JFrame {
 		contentPane.add(btnRestartAM);
 	}
 	
-	public static void setPicture(ImageIcon answer) {
+	public void CarPhoto() {
+		
+		int color = CarFactory.color;
 
-		lblCarPic.setIcon(answer);
-		contentPane.add(lblCarPic);
+//		ImageIcon imgBlack = new ImageIcon("black_96.png");
+//		ImageIcon imgBlue = new ImageIcon("blue2.png");
+//		ImageIcon imgRed = new ImageIcon("red.png");
+//		ImageIcon imgSilver = new ImageIcon("silver.png");
+//		ImageIcon imgPurp = new ImageIcon("purp.png");
+//		ImageIcon imgYellow = new ImageIcon("yellow.png");
+
+		if (color == 0) {
+			answer = imgRed;}
+		if (color == 1) {
+			answer = imgBlue;}
+		if (color == 2) {
+			answer = imgSilver;}
+		if (color == 3) {
+			answer = imgBlack;}
+		if (color == 4) {
+			answer = imgPurp;}
+		if (color == 5) {
+			answer = imgYellow;}
+		
 	}
 
 }
