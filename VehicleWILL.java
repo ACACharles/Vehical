@@ -1,7 +1,7 @@
-import java.util.Scanner;
+package Vehicle;
 
-class Vehicle 
-{
+public  class VehicleWILL {
+	
 	//These are variables
 	int passengers; //number of passengers
 	int fuelcap; //ammount of fuel vehicle can hold in gallons
@@ -18,8 +18,8 @@ class Vehicle
 	public static String hornsound;
 	static String key = "1990";
 	
-//Below is the constructor for vehicles
-	Vehicle (int p, int f, int m, int d, int drs, int t, String c, int w, int y, int tm)
+	//Below is the constructor for vehicles
+	VehicleWILL (int p, int f, int m, int d, int drs, int t, String c, int w, int y, int tm)
 	{
 		passengers = p;
 		fuelcap = f;
@@ -32,7 +32,7 @@ class Vehicle
 		totalmiles = tm;
 	}
 	// Constructor with 3 parameters
-		Vehicle ( int p, int f, int m)
+		VehicleWILL ( int p, int f, int m)
 		{
 			passengers = p;
 			fuelcap = f;
@@ -45,7 +45,7 @@ class Vehicle
 			totalmiles = 50000;
 		}
 		//Constructor for when values aren't assigned
-			Vehicle ()
+			VehicleWILL ()
 			{
 				passengers = 4 ;
 				fuelcap = 12 ;
@@ -127,19 +127,21 @@ class Vehicle
 								if (keyUsed==key)
 									return true;
 								else
+					
 									return false;
 							};
 }
+
 
 class VehConsDemo
 {
 	public static void main (String [] args) //construct vehicles
 	
 	{
-		Vehicle minivan = new Vehicle (7, 16, 21);
-		Vehicle sportscar = new Vehicle (2, 14, 12);
-		Vehicle sedan = new Vehicle ();
-		Scanner input = new Scanner(System.in);
+		VehicleWILL minivan = new VehicleWILL (7, 16, 21);
+		VehicleWILL sportscar = new VehicleWILL (2, 14, 12);
+		VehicleWILL sedan = new VehicleWILL ();
+		//Scanner input = new Scanner(System.in);
 		double gallons;
 		double gasrefill;
 		int dist = 252;
@@ -162,7 +164,7 @@ class VehConsDemo
 	//System.out.println(minivan.start());
 
 		
-			if (Vehicle.start(minivan.key)) 
+			if (VehicleWILL.start(minivan.key)) 
 			//{
 				System.out.println ("Car started.");
 			

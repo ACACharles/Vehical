@@ -1,3 +1,5 @@
+package VehiclePack;
+
 import java.util.Scanner;
 class Vehicle {
 
@@ -9,20 +11,21 @@ class Vehicle {
 	int weight;
 	int year;
 	int totalMiles;
-	String color;
 	int topSpeed;
 	int speed;
 	int fuelLevel;
-	String key;
-	
 	int refuel;
+	String key;	
+	String color;
+	
+	
 	
 	
     
 
 	
 Vehicle() /* This is the default constructor. 
-Charles mentioned that these can also be referred as a "constructor method", because it's technically a mehtod as well. */
+Charles mentioned that these can also be referred as a "constructor method", because it's technically a method as well as a constructor. */
 	{
 	passengers = 4;
 	fuelcap =  350;
@@ -78,7 +81,7 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)    /
 		}
 	    else 
 	    {
-			System.out.println("Key doesn't match, vehicle does not starts.");
+			System.out.println("Key doesn't match, vehicle does not start.");
 			return false;
 	    }
 	 }
@@ -129,7 +132,8 @@ Vehicle (int p, int f, int m, int d, int t, int w, int y, int tm, String c)    /
 
 
 class VehicleCody {
-	public static void main (String[] args) {
+	
+	public static void main(String[] args) {
 	
 	Vehicle default1 = new Vehicle();	
 	System.out.println(" Default vehicle specs " + " Passenger: " + default1.passengers + " Fuelcap: " + default1.fuelcap + " Mpg: " + default1.mpg);
@@ -161,10 +165,6 @@ class VehicleCody {
 	gallons = sportscar.fuelneeded(dist);
 	
 	System.out.println ("To go " + dist + " miles sportscar needs " + gallons + " gallons of fuel. ");
-	
-	gallons = minivan.fuelneeded(dist);
-	
-	System.out.println("To go " + dist + " miles minivan needs " + gallons + " gallons of fuel.");
 	
 	System.out.println ("To go " + dist + " You will use up " + minivan.refuel(dist) + " of tank.");
 	
