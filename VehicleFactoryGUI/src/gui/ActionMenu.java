@@ -20,6 +20,7 @@ public class ActionMenu extends JFrame {
 	private static JPanel contentPane;
 	private static JLabel lblCarPic;
 	public static ImageIcon answer;
+	int color = CarFactory.color;
 	
 	ImageIcon imgBlack = new ImageIcon("black_96.png");
 	ImageIcon imgBlue = new ImageIcon("blue2.png");
@@ -102,8 +103,21 @@ public class ActionMenu extends JFrame {
 		lblRange.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblRange.setBounds(10, 420, 136, 34);
 		contentPane.add(lblRange);
+		
+		if (color == 0) {
+			answer = imgRed;}
+		if (color == 1) {
+			answer = imgBlue;}
+		if (color == 2) {
+			answer = imgSilver;}
+		if (color == 3) {
+			answer = imgBlack;}
+		if (color == 4) {
+			answer = imgPurp;}
+		if (color == 5) {
+			answer = imgYellow;}
 
-		lblCarPic = new JLabel("your car here");
+		lblCarPic = new JLabel("");
 		lblCarPic.setIcon(answer);
 		lblCarPic.setBounds(156, 112, 330, 265);
 		contentPane.add(lblCarPic);
