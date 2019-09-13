@@ -1,134 +1,131 @@
 package vehicle;
 
 public class Automobile extends Vehicle {
-	private String Owner; 
-	 private String Title; 
-	  private boolean Trunk; 
-	   private boolean AC ; 
-	  private boolean Tint; 
-	 private Maker autoMaker; 
-	private Model autoModel; 
+	private boolean Trunk;
+	private boolean Ac;
+	private boolean Tint;
+	private String Owner;
+	private String Title;
+	public makerVehicle AutoMake;
+	public model AutoModel;
 	
-	
-     Automobile(){
-    	 super(); 
-    	
-     
-		Owner = "Luke" ;
-		 Title = "Held" ;
-		  Trunk = true; 
-		   AC = true ; 
-		  Tint = false; 
-		 autoMaker = new Maker();
-		autoModel = new Model() ; 
-		     
-		      
-		     
-		     
-	}
-     Automobile(int p, int f, int m, Maker Ll, Model Mm) {
-    	 super(p,f,m);
-    	  autoMaker = Ll; 
-    	   autoModel = Mm; 
-    	   Owner = "Luke" ;
-  		    Title = "Held" ;
-  		   Trunk = true; 
-  		  AC = true ; 
-  		 Tint = false; 
-    	   
-     }
-     Automobile(int p, int f, int m, Maker Ll, Model Mm, int d, int t, int w, int y, int z, String c){
-    	 autoMaker = Ll; 
-  	      autoModel = Mm; 
-  	        Owner = "Luke" ;
-		    Title = "Held" ;
-		   Trunk = true; 
-		  AC = true ; 
-		 Tint = false;
+	Automobile(int MPG, int pass, int fc, model mo, makerVehicle ma)
+	{
+		super();
+		Trunk = true;
+		Ac = true;
+		Tint = true;
+		Owner = "Me";
+		Title = "IN Glove box.";
+		AutoMake = new makerVehicle();
+		AutoModel = new model();
+		updateVehicle();
 		
-    	 
-    	 
-    	 
-   }
-	
-	public Maker getAutoMaker() {
-		return autoMaker;
 	}
-
-		public void setAutoMaker(Maker autoMaker) {
-			this.autoMaker = autoMaker;
-	}
-
-		public Model getAutoModel() {
-			return autoModel;
-	}
-
-			public void setAutoModel(Model autoModel) {
-				this.autoModel = autoModel;
-	}
-
-				public int getWheels() {
-					String[] TrimPackage = autoModel.getTrimPackage();
-						int wheelCount = 0;
-					try {
-						wheelCount = Integer.parseInt(TrimPackage[1]);
-					}
-					catch(Exception e ) {
-						System.out.println("Bad Trim Pack");
-					}
-					return wheelCount; 
-					}
-	
-	
-				public int getDoors() {
-					return super.doors;
-	}
-
-			public String getOwner() {
-				return Owner;
-	}
-
-		public void setOwner(String owner) {
-			Owner = owner;
-	}
-
-		public String getTitle() {
-			return Title;
-	}
-
-			public void setTitle(String title) {
-				Title = title;
-	}
-
-				public boolean isTrunk() {
-					return Trunk;
-	}
-
-					public void setTrunk(boolean trunk) {
-						Trunk = trunk;
-	}
-
-						public boolean isAC() {
-							return AC;
-	}
-
-						public void setAC(boolean aC) {
-							AC = aC;
-	}	
-
-					public boolean isTint() {
-						return Tint;
-	}
-
-				public void setTint(boolean tint) {
-					Tint = tint;
+	Automobile(model mo, makerVehicle ma, String clr , int ps, int mg, int fc, int ds, double ton, int yr, int ts, int top)
+	{
+		super( ps, fc, mg);
+		Trunk = true;
+		Ac = true;
+		Owner = "Me";
+		Title = "Yes";
+		AutoMake = new makerVehicle();
+		AutoModel = new model();
+		updateVehicle();
 	}
 	
-			void getMakeandModel() {
-				Tint = true; 
-	} 
-	
-	
-	
+	public boolean isTrunk() 
+	{
+		return Trunk;
+	}
+	public void setTrunk(boolean newTrunk)
+	{
+		Trunk = newTrunk;
+	}
+	public boolean isAc() 
+	{
+		return Ac;
+	}
+	public void setAc(boolean newAc)
+	{
+		newAc= Ac;
+	}
+	public boolean isTint() 
+	{
+		return Tint;
+	}
+	public void setTint(boolean newTint) 
+	{
+		 Tint = newTint;
+	}
+	public String getOwner() 
+	{
+		return Owner;	
+	}
+	public void setOwner(String newOwner) 
+	{
+		Owner = newOwner;
+	}
 
-}
+	public int getNumWheels() 
+	{
+		String[] trimPackage = AutoModel.getPackageType();
+		int wheelCount = 0;
+		try 
+		{
+			wheelCount = Integer.parseInt(trimPackage[1]);
+		}
+		catch(Exception e) 
+		{
+			System.out.println("Bad Package Type");
+		}
+		return wheelCount;
+	}
+	private void updateVehicle() 
+	{
+		String [] trimPak = AutoModel. getPackageType();
+		int wCount, MPG, pass, fuelCap,tonnage;
+		String colour;
+		
+			try 
+			{ 
+				MPG = Integer.parseInt(trimPak[2]);
+				pass = Integer.parseInt(trimPak[3]);
+				fuelCap = Integer.parseInt(trimPak[4]);
+				
+			}
+			catch(Exception e) 
+			{
+				
+				MPG = 20;
+				pass = 4;
+				fuelCap = 20;
+				
+				System.out.println("Bad Package Type");
+			}
+			try 
+			{
+				tonnage = Integer.parseInt(trimPak[11]);
+			}
+			catch (Exception e) 
+			{
+				tonnage = 2;
+				System.out.println("Bad Trim Package");
+			}
+			super.mpg = MPG;
+			super.passengers = pass;
+			super.fuelcap = fuelcap;
+			super.tonnage = tonnage;
+			super.color = trimPak[3];
+	}
+	
+	int getdNumDoors()
+	{
+		return super.doors;
+	}
+	@Override
+	void getMakeandModel() {
+		AutoMake.getMaker();
+		AutoModel.getModelName();
+	}
+	}
